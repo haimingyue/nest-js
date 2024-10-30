@@ -1,0 +1,17 @@
+version: '3.1'
+
+service:
+  db:
+   image: postgres
+   restart: always
+   environment:
+    POSTGRES_PASSWORD: 123456
+    POSTGRES_DB: pk-db
+    POSTGRES_USER: pguser
+  
+
+  adminer:
+   image: adminer
+   restart: always
+   ports:
+    -8080:8080

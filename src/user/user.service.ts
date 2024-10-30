@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { HomeResources } from '@prisma/client';
+import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class UserService {
-    getUsers() {
-        return {
-            code: 1,
-            data: [],
-            msg: '请求用户列表成功'
-        }
+    constructor(private prisma: PrismaService) {}
+    getUsers(): Promise<HomeResources[]> {
+        const res = this.prisma.homeResources.findMany({})
+        return res;
     }
 }

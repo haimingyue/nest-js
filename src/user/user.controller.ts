@@ -10,8 +10,9 @@ export class UserController {
 
     }
     
-    @Get()
+    @Get('/get')
     getUsers(): any {
+        // console.log("helloword")
         return this.userService.getUsers()
     }
 }
