@@ -23,6 +23,7 @@ model HomeResources {
   module   String  @default("home")
   type     String?
   icon     String?
+  order    Int     @default(100)
 
   @@map("home_resources")
 }
